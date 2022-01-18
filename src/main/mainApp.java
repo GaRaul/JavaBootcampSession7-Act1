@@ -26,7 +26,6 @@ public class mainApp {
 		System.out.println(elec2.toString());
 		System.out.println(elec3.toString());
 		System.out.println(elec4.toString());
-		//sss
 	}
 
 }
