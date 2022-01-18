@@ -63,7 +63,7 @@ public class Electrodomesticos {
 		
 		return color;
 	}
-// hola
+
 	@Override
 	public String toString() {
 		return "Electrodomesticos: precio=" + precio + ", color=" + color + ", consumo=" + consumo + ", peso=" + peso + "]";
