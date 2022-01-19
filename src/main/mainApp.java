@@ -1,3 +1,8 @@
+/* 
+ * Autores: Abel, Fernando, Raul
+ * Ultima modificacion: 19/01/2022
+ * */
+
 package main;
 
 import objetos.Electrodomesticos;
@@ -9,12 +14,10 @@ public class mainApp {
 	public static void main(String[] args) {
 
 		//Crea un array de Electrodomesticos de 10 posiciones.
-
 		Electrodomesticos[] electrodomesticos = new Electrodomesticos[10];
 
 		//Asigna a cada posición un objeto de las clases anteriores con los valores que
 		//desees.
-
 		electrodomesticos[0] = new Lavadora(200, "amarillo", 'J', 12.4, 40);
 		electrodomesticos[1] = new Television(250, "amarillo", 'J', 12.4, 41, true);
 		electrodomesticos[2] = new Lavadora(160, "amarillo", 'J', 12.4, 20);
@@ -27,15 +30,16 @@ public class mainApp {
 		electrodomesticos[9] = new Television(356, "amarillo", 'J', 12.4, 41, true);
 
 		//Ahora, recorre este array y ejecuta el método precioFinal
-
 		int contTelevisiones = 0;
 		int contLavadoras = 0;
 		double sumaTotal = 0;
 
+		// Calcula el precioFinal de cada electrodomestico del array y va sumando el precioFinal de cada uno a una variable
 		for (int i = 0; i < electrodomesticos.length; i++) {
 			electrodomesticos[i].precioFinal();
 			sumaTotal += electrodomesticos[i].getPrecio();
 
+			// Condicion que dependiendo del tipo de electrodomestico le suma 1 al contador que le corresponde
 			if (electrodomesticos[i] instanceof Television) {
 				contTelevisiones++;
 
@@ -44,15 +48,16 @@ public class mainApp {
 			}
 		}
 
+		// Declaro 2 arrays, uno de Television y otro de Lavadora usando los contadores anteriores para poner las medidas
 		Television[] televisiones = new Television[contTelevisiones];
 		Lavadora[] lavadoras = new Lavadora[contLavadoras];
 
+		// Pongo los contadores a 0
 		contTelevisiones = 0;
 		contLavadoras = 0;
 
+		// Meto en los arrays que he declarado las Televisiones y Lavadoras por separado, para poder mostrarlos por separado despues
 		for (int i = 0; i < electrodomesticos.length; i++) {
-			electrodomesticos[i].precioFinal();
-
 			if (electrodomesticos[i] instanceof Television) {
 				televisiones[contTelevisiones] = (Television) electrodomesticos[i];
 				contTelevisiones++;
@@ -63,6 +68,7 @@ public class mainApp {
 			}
 		}
 
+		// Muestro ambos arrays
 		for (int i = 0; i < lavadoras.length; i++) {
 			System.out.println("El precio de la lavadora " + i + " es: " + lavadoras[i].getPrecio());
 		}
@@ -73,16 +79,7 @@ public class mainApp {
 			System.out.println("El precio de la television " + i + " es: " + televisiones[i].getPrecio());
 		}
 
-		//Deberás mostrar el precio de cada clase, es decir, el precio de todas las
-		//televisiones por un lado, el de las lavadoras por otro y la suma de los
-		//Electrodomesticos (puedes crear objetos Electrodomestico , pero recuerda que
-		//Television y Lavadora también son electrodomésticos). Recuerda el uso operador
-		//instanceof
-
-		//Por ejemplo, si tenemos un
-		//Electrodomestico con un precio final de 300, una
-		//lavadora de 200 y una televisión de 500, el resultado final sera de 1000
-		//(300+200+500) para electrodomésticos, 200 para lavadora y 500 para television.
+		// Muestro la suma total del precio de todos los electrodomesticos
 		System.out.println("------");
 		System.out.println("Suma total de todos los electrodomesticos = " + sumaTotal);
 
