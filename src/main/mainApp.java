@@ -26,6 +26,17 @@ public class mainApp {
 		System.out.println(elec2.toString());
 		System.out.println(elec3.toString());
 		System.out.println(elec4.toString());
+		System.out.println();
+		
+		elec1.precioFinal();
+		elec2.precioFinal();
+		elec3.precioFinal();
+		elec4.precioFinal();
+
+		System.out.println(elec1.toString());
+		System.out.println(elec2.toString());
+		System.out.println(elec3.toString());
+		System.out.println(elec4.toString());
 	}
 
 }
