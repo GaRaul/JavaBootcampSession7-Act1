@@ -1,19 +1,27 @@
+/*
+ * Autores: Abel, Fernando, Raul
+ * Ultima modificacion: 19/01/2022
+ * */
+
 package objetos;
 
 import java.util.ArrayList;
 
 public class Electrodomesticos {
 
+	// CONSTANTES
 	private final double PRECIO = 100;
 	private final String COLOR = "blanco";
 	private final char CONSUMO = 'F';
 	private final double PESO = 5;
 
+	// ATRIBUTOS
 	protected double precio;
 	protected String color;
 	protected char consumo;
 	protected double peso;
 
+	// CONSTRUCTOR POR DEFECTO
 	public Electrodomesticos() {
 		this.precio = PRECIO;
 		this.color = COLOR;
@@ -21,6 +29,7 @@ public class Electrodomesticos {
 		this.peso = PESO;
 	}
 
+	// CONSTRUCTOR CON PRECIO Y PESO
 	public Electrodomesticos(double precio, double peso) {
 		this.color = COLOR;
 		this.consumo = CONSUMO;
@@ -28,6 +37,7 @@ public class Electrodomesticos {
 		this.peso = peso;
 	}
 
+	// CONSTRUCTOR CON TODOS LOS ATRIBUTOS
 	public Electrodomesticos(double precio, String color, char consumo, double peso) {
 		this.precio = precio;
 		this.color = comprobarColor(color);
@@ -35,6 +45,7 @@ public class Electrodomesticos {
 		this.peso = peso;
 	}
 
+	// METODO QUE COMPRUEBA QUE EL COLOR PASADO POR EL USUARIO ESTA ENTRE LOS PERMITIDOS Y SINO LO PONE POR DEFECTO
 	private String comprobarColor(String color) {
 		String colorUsuario = color;
 
@@ -64,6 +75,7 @@ public class Electrodomesticos {
 		return color;
 	}
 
+	// METODO QUE COMPRUEBA QUE EL CONSUMO PASADO POR EL USUARIO ESTA ENTRE LOS PERMITIDOS Y SINO LO PONE POR DEFECTO
 	private char comprobarConsumo(char consumo) {
 		char consumos[] = new char[] { 'A', 'B', 'C', 'D', 'E', 'F' };
 		char consumoUsuario = consumo;
@@ -80,6 +92,7 @@ public class Electrodomesticos {
 		return consumo;
 	}
 
+	// METODO QUE CALCULA EL PRECIO FINAL SEGUN LAS CARACTERISTICAS DEL ELECTRODOMESTICO
 	public void precioFinal() {
 		if (this.consumo == 'A') {
 			this.precio += 100;
@@ -108,12 +121,14 @@ public class Electrodomesticos {
 		
 	}
 
+	// METODO PARA MOSTRAR LOS VALORES DEL ELECTRODOMESTICO
 	@Override
 	public String toString() {
 		return "Electrodomesticos: precio=" + precio + ", color=" + color + ", consumo=" + consumo + ", peso=" + peso
 				+ "]";
 	}
 
+	// GETTERS Y SETTERS PARA ACCEDER Y MODIFICAR A LOS ATRIBUTOS DESDE OTRA CLASE
 	public double getPrecio() {
 		return precio;
 	}
