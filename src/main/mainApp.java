@@ -1,6 +1,7 @@
 package main;
 
 import objetos.Electrodomesticos;
+import objetos.Television;
 
 public class mainApp {
 
@@ -22,6 +23,8 @@ public class mainApp {
 		Electrodomesticos elec3 = new Electrodomesticos(200, "negro", 'A', 12.4);
 		Electrodomesticos elec4 = new Electrodomesticos(200, "amarillo", 'A', 12.4);
 		Electrodomesticos elec5 = new Electrodomesticos(200, "amarillo", 'J', 12.4);
+		Television tele1 = new Television(100, "amarillo", 'J', 12.4, 41, true);
+		tele1.precioFinal();
 		
 		System.out.println(elec1.toString());
 		System.out.println(elec2.toString());
@@ -29,6 +32,7 @@ public class mainApp {
 		System.out.println(elec4.toString());
 		System.out.println(elec5.toString());
 
+		System.out.println(tele1.toString());
 
 	}
 }
