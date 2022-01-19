@@ -3,7 +3,7 @@ package objetos;
 import java.util.ArrayList;
 
 public class Electrodomesticos {
-	
+
 	private final double PRECIO = 100;
 	private final String COLOR = "blanco";
 	private final char CONSUMO = 'F';
@@ -13,14 +13,14 @@ public class Electrodomesticos {
 	private String color;
 	private char consumo;
 	private double peso;
-	
+
 	public Electrodomesticos() {
 		this.precio = PRECIO;
 		this.color = COLOR;
 		this.consumo = CONSUMO;
 		this.peso = PESO;
 	}
-	
+
 	public Electrodomesticos(double precio, double peso) {
 		this.color = COLOR;
 		this.consumo = CONSUMO;
@@ -31,28 +31,28 @@ public class Electrodomesticos {
 	public Electrodomesticos(double precio, String color, char consumo, double peso) {
 		this.precio = precio;
 		this.color = comprobarColor(color);
-		this.consumo = consumo;
+		this.consumo = comprobarConsumo(consumo);
 		this.peso = peso;
 	}
-	
+
 	private String comprobarColor(String color) {
 		String colorUsuario = color;
-		
+
 		ArrayList<String> colores = new ArrayList<String>();
 		colores.add("blanco");
 		colores.add("negro");
 		colores.add("rojo");
 		colores.add("azul");
 		colores.add("gris");
-		
+
 		boolean salir = false;
 		int contador = 0;
-		int sizeColores = colores.size()-1;
+		int sizeColores = colores.size() - 1;
 		// Hago un bucle que recorre el arraylist comprobando si el color introducido
 		// es un color valido, una vez lo encuentra hace un return del color, si no
 		// lo encuentra pone el color por defecto
-		do  {
-			if(colores.get(contador).equalsIgnoreCase(colorUsuario)) {
+		do {
+			if (colores.get(contador).equalsIgnoreCase(colorUsuario)) {
 				color = colorUsuario;
 				salir = true;
 			} else {
@@ -60,8 +60,24 @@ public class Electrodomesticos {
 			}
 			contador++;
 		} while (!salir && contador < sizeColores);
-		
+
 		return color;
+	}
+
+	private char comprobarConsumo(char consumo) {
+		char consumos[] = new char[] { 'A', 'B', 'C', 'D', 'E', 'F' };
+		char consumoUsuario = consumo;
+
+		for (int i = 0; i < consumos.length; i++) {
+			if (consumoUsuario == (consumos[i])) {
+				consumo = consumoUsuario;
+				return consumo;
+			} else {
+				consumo = CONSUMO;
+			}
+		}
+
+		return consumo;
 	}
 
 	public void precioFinal() {
@@ -87,15 +103,16 @@ public class Electrodomesticos {
 			this.precio += 80;
 		} else if (this.peso >= 80) {
 			this.precio += 100;
-		} 
+		}
 		
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Electrodomesticos: precio=" + precio + ", color=" + color + ", consumo=" + consumo + ", peso=" + peso + "]";
+		return "Electrodomesticos: precio=" + precio + ", color=" + color + ", consumo=" + consumo + ", peso=" + peso
+				+ "]";
 	}
-	
+
 	public double getPrecio() {
 		return precio;
 	}
@@ -126,6 +143,7 @@ public class Electrodomesticos {
 
 	public void setPeso(double peso) {
 		this.peso = peso;
+
 	}
-	
+
 }
