@@ -63,12 +63,69 @@ public class Electrodomesticos {
 		
 		return color;
 	}
-// hola
+
+	public void precioFinal() {
+		if (this.consumo == 'A') {
+			this.precio += 100;
+		} else if (this.consumo == 'B') {
+			this.precio += 80;
+		} else if (this.consumo == 'C') {
+			this.precio += 60;
+		} else if (this.consumo == 'D') {
+			this.precio += 50;
+		} else if (this.consumo == 'E') {
+			this.precio += 30;
+		} else if (this.consumo == 'F') {
+			this.precio += 10;
+		}
+		
+		if (this.peso <= 19) {
+			this.precio += 10;
+		} else if (this.peso >= 20 && this.peso <= 49) {
+			this.precio += 50;
+		} else if (this.peso >= 50 && this.peso <= 79) {
+			this.precio += 80;
+		} else if (this.peso >= 80) {
+			this.precio += 100;
+		} 
+		
+	}
+	
 	@Override
 	public String toString() {
 		return "Electrodomesticos: precio=" + precio + ", color=" + color + ", consumo=" + consumo + ", peso=" + peso + "]";
 	}
 	
-	
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public char getConsumo() {
+		return consumo;
+	}
+
+	public void setConsumo(char consumo) {
+		this.consumo = consumo;
+	}
+
+	public double getPeso() {
+		return peso;
+	}
+
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
 	
 }
