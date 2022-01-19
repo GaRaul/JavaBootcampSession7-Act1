@@ -9,10 +9,10 @@ public class Electrodomesticos {
 	private final char CONSUMO = 'F';
 	private final double PESO = 5;
 
-	private double precio;
-	private String color;
-	private char consumo;
-	private double peso;
+	protected double precio;
+	protected String color;
+	protected char consumo;
+	protected double peso;
 
 	public Electrodomesticos() {
 		this.precio = PRECIO;
@@ -104,6 +104,7 @@ public class Electrodomesticos {
 		} else if (this.peso >= 80) {
 			this.precio += 100;
 		}
+		
 		
 	}
 
