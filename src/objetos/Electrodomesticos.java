@@ -31,7 +31,7 @@ public class Electrodomesticos {
 	public Electrodomesticos(double precio, String color, char consumo, double peso) {
 		this.precio = precio;
 		this.color = comprobarColor(color);
-		this.consumo = consumo;
+		this.consumo = comprobarConsumo(consumo);
 		this.peso = peso;
 	}
 	
@@ -63,12 +63,58 @@ public class Electrodomesticos {
 		
 		return color;
 	}
-// hola
+	
+	private char comprobarConsumo(char consumo) {
+		char consumos[] = new char [] {'A', 'B' ,'C' ,'D' ,'E' , 'F'};
+		char consumoUsuario = consumo;
+	
+		for (int i = 0; i < consumos.length; i++) {
+			if(consumoUsuario == (consumos[i])) {
+				consumo = consumoUsuario;
+				return consumo;
+			}else {
+				consumo = CONSUMO;
+			}
+		}	
+		
+		return consumo;		
+	}
+	
 	@Override
 	public String toString() {
 		return "Electrodomesticos: precio=" + precio + ", color=" + color + ", consumo=" + consumo + ", peso=" + peso + "]";
 	}
 	
-	
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public char getConsumo() {
+		return consumo;
+	}
+
+	public void setConsumo(char consumo) {
+		this.consumo = consumo;
+	}
+
+	public double getPeso() {
+		return peso;
+	}
+
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}	
 	
 }
